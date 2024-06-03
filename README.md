@@ -83,10 +83,11 @@ Nesta seção serão abordadas as técnicas de otimização seguindo as abordage
 
 ### De fora pra dentro
 
-**Modelo com Dropout:**
+**Quantização:**
 
-O modelo sequencial é configurado com camadas convolucionais, camadas de pooling e camadas densas.
-Uma camada de Dropout com uma taxa de 0.5 é adicionada para reduzir o overfitting.
+- O modelo Keras é convertido para o formato TensorFlow Lite;
+- São aplicadas otimizações de quantização durante a conversão para reduzir o tamanho do modelo;
+- Um interpretador TensorFlow Lite é criado com o modelo quantizado, e tensores são alocados para ele;
 
 ## API do Modelo
 
@@ -118,22 +119,22 @@ Foram feitos três casos de teste diante da performance do Modelo referente a ta
 
 ![Texto alternativo](image_0.png)
 
-Expectativa da resposta: categoria 3 (Gato);
-Predição do modelo: categoria 3 (Gato);
+- Expectativa da resposta: categoria 3 (Gato);
+- Predição do modelo: categoria 3 (Gato);
 
 **Caso de teste com a image_1.png:**
 
 ![Texto alternativo](image_1.png)
 
-Expectativa da resposta: categoria 8 (Navio);
-Predição do modelo: categoria 8 (Navio);
+- Expectativa da resposta: categoria 8 (Navio);
+- Predição do modelo: categoria 8 (Navio);
 
 **Caso de teste com a image_2.png:**
 
 ![Texto alternativo](image_2.png)
 
-Expectativa da resposta: categoria 8 (Navio);
-Predição do modelo: categoria 8 (Navio);
+- Expectativa da resposta: categoria 8 (Navio);
+- Predição do modelo: categoria 8 (Navio);
 
 ## Resultados e Análises
 
